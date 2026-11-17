@@ -71,6 +71,18 @@ ul {
     padding: 15px 20px;
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 75px;
+    width: auto;
+    display: block;
+}
+
 .logo h1 {
     font-size: 1.5rem;
     color: var(--cor-primaria);
