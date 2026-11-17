@@ -19,7 +19,11 @@
                         <h1>Solidariza</h1>
                     </a>
                 </div>
-
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                </button>
                 <div class="menu-links">
                     <a href="#">Início</a>
                     <a href="#">Campanhas</a>

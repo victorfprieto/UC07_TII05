@@ -5,5 +5,15 @@
     </div>
 </footer>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuLinks = document.querySelector('.menu-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('ativo');
+            menuLinks.classList.toggle('ativo');
+        });
+    </script>
 </body>
 </html>

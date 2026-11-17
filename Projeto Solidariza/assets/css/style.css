@@ -51,26 +51,27 @@ ul {
 }
 
 /* ==========================================================================
-   3. CABEÇALHO E NAVEGAÇÃO (NAVBAR)
+   3. CABEÇALHO E NAVEGAÇÃO (NAVBAR) - CONSOLIDADO
    ========================================================================== */
 .cabecalho-principal {
     background-color: var(--cor-branco);
     border-bottom: var(--borda-padrao);
     box-shadow: var(--sombra-leve);
-    position: sticky; /* Mantém o menu no topo ao rolar a página */
+    position: sticky; 
     top: 0;
     z-index: 100;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between; /* Separa a logo dos links */
-    align-items: center;            /* Centraliza verticalmente */
-    max-width: 1200px;              /* Largura máxima do conteúdo */
-    margin: 0 auto;                 /* Centraliza a navbar na tela */
+    justify-content: space-between; 
+    align-items: center;            
+    max-width: 1200px;              
+    margin: 0 auto;                 
     padding: 15px 20px;
 }
 
+/* --- LOGO --- */
 .logo a {
     display: flex;
     align-items: center;
@@ -78,7 +79,7 @@ ul {
 }
 
 .logo img {
-    height: 75px;
+    height: 50px;
     width: auto;
     display: block;
 }
@@ -89,10 +90,11 @@ ul {
     font-weight: 700;
 }
 
+/* --- MENU LINKS (DESKTOP) --- */
 .menu-links {
-    display: flex;
+    display: flex;       /* Garante que o menu apareça no Desktop */
     align-items: center;
-    gap: 30px; /* Espaçamento entre os itens do menu */
+    gap: 30px;
 }
 
 .menu-links a:hover {
@@ -106,7 +108,7 @@ ul {
     background-color: var(--cor-primaria);
     color: var(--cor-branco) !important;
     padding: 10px 20px;
-    border-radius: 6px;
+    border-radius: 16px;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -219,7 +221,7 @@ ul {
 .card {
     background-color: var(--cor-branco);
     border: var(--borda-padrao);
-    border-radius: 12px; /* Bordas arredondadas amigáveis */
+    border-radius: 16px; /* Bordas arredondadas amigáveis */
     padding: 30px;
     flex: 1;
     box-shadow: var(--sombra-leve);
@@ -278,5 +280,73 @@ ul {
     
     .menu-links {
         display: none; /* Em um cenário real, aqui entraria um menu Hamburguer */
+    }
+}
+
+/* ==========================================================================
+   9. MENU HAMBÚRGUER E RESPONSIVIDADE (MOBILE)
+   ========================================================================== */
+/* Botão do menu fica oculto no Desktop */
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle .linha {
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Regras aplicadas APENAS em telas menores que 768px (Celulares) */
+@media (max-width: 768px) {
+    
+    .menu-toggle {
+        display: flex; /* Mostra o botão hambúrguer */
+    }
+
+    /* Sobrescreve o .menu-links do desktop para esconder na tela de celular */
+    .menu-links {
+        position: absolute;
+        top: 80px; /* Altura do cabeçalho */
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-branco);
+        flex-direction: column;
+        padding: 30px 0;
+        box-shadow: var(--sombra-hover);
+        
+        /* Esconde o menu */
+        transform: translateY(-150%);
+        opacity: 0;
+        pointer-events: none; /* Impede que o menu invisível bloqueie cliques */
+        transition: all 0.3s ease;
+    }
+
+    /* Classe ativada pelo JavaScript para mostrar o menu */
+    .menu-links.ativo {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    /* Animação do botão virando um "X" */
+    .menu-toggle.ativo .linha:nth-child(1) {
+        transform: translateY(9.5px) rotate(45deg);
+    }
+    .menu-toggle.ativo .linha:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.ativo .linha:nth-child(3) {
+        transform: translateY(-9.5px) rotate(-45deg);
     }
 }
