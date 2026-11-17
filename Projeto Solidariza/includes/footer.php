@@ -4,6 +4,6 @@
         <p><small>Desenvolvido para fins educacionais - Turma TII05 @ Senac Santos</small></p>
     </div>
 </footer>
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
