@@ -15,6 +15,24 @@
             <img src="./assets/img/hero.jpeg" alt="Imagem de um projeto voluntariado com pessoas ajudando">
         </div>
     </section>
+
+    <section class="como-funciona">
+        <h3>Como Funciona</h3>
+        <div class="cards-passos">
+            <div class="card">
+                <h4>1. Cadastre-se</h4>
+                <p>Crie sua conta informando seu CEP. Nós organizamos a logística pra você.</p>
+            </div>
+            <div class="card">
+                <h4>2. Escolha a causa</h4>
+                <p>Navegue pelas campanhas ativas e escolha onde sua doação fará diferença.</p>
+            </div>
+            <div class="card">
+                <h4>3. Solidarize-se</h4>
+                <p>A ONG aprova seu item e planeja a coleta. Sustentabilidade e apoio social em um só lugar.</p>
+            </div>
+        </div>
+    </section>
 </main>
 
 <?php include_once 'includes/footer.php'?>

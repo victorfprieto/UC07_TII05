@@ -187,6 +187,7 @@ ul {
     height: auto;
     /* Adiciona uma animação suave de flutuação para dar vida à página */
     animation: flutuar 3s ease-in-out infinite; 
+    border-radius: 16px;
 }
 
 @keyframes flutuar {
