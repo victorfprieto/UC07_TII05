@@ -1,0 +1,269 @@
+/* ==========================================================================
+   1. IMPORTAÇÃO DE FONTES E VARIÁVEIS GLOBAIS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    /* Paleta Sustentável */
+    --cor-primaria: #2E7D32;       /* Verde Folha (Ação principal) */
+    --cor-primaria-hover: #1B5E20; /* Verde Escuro (Ao passar o mouse) */
+    --cor-fundo-card: #E8F5E9;     /* Verde Sálvia (Apoio) */
+    
+    /* Cores Neutras e Acessibilidade (IHC) */
+    --cor-texto: #212121;          /* Cinza Carvão para leitura confortável */
+    --cor-texto-claro: #757575;    /* Cinza médio para textos secundários */
+    --cor-fundo-site: #F8F9FA;     /* Branco Gelo */
+    --cor-branco: #FFFFFF;         /* Fundo de elementos em destaque */
+    
+    /* Estilos Visuais */
+    --borda-padrao: 1px solid #E0E0E0;
+    --sombra-leve: 0 4px 6px rgba(0,0,0,0.05);
+    --sombra-hover: 0 8px 15px rgba(0,0,0,0.1);
+    
+    /* Tipografia */
+    --fonte-principal: 'Inter', sans-serif;
+}
+
+/* ==========================================================================
+   2. RESET CSS (Padronização entre navegadores)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho da caixa */
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo-site);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO E NAVEGAÇÃO (NAVBAR)
+   ========================================================================== */
+.cabecalho-principal {
+    background-color: var(--cor-branco);
+    border-bottom: var(--borda-padrao);
+    box-shadow: var(--sombra-leve);
+    position: sticky; /* Mantém o menu no topo ao rolar a página */
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Separa a logo dos links */
+    align-items: center;            /* Centraliza verticalmente */
+    max-width: 1200px;              /* Largura máxima do conteúdo */
+    margin: 0 auto;                 /* Centraliza a navbar na tela */
+    padding: 15px 20px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+.menu-links {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espaçamento entre os itens do menu */
+}
+
+.menu-links a:hover {
+    color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   4. BOTÕES (Componentes Reutilizáveis)
+   ========================================================================== */
+.btn-sustentavel {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco) !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-sustentavel:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px); /* Efeito sutil de levantar ao passar o mouse */
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--cor-primaria);
+    padding: 10px 20px;
+    border: 2px solid var(--cor-primaria);
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+.btn-grande {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   5. PÁGINA INICIAL: HERO SECTION
+   ========================================================================== */
+.conteudo-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 80px;
+    padding: 40px 0;
+}
+
+.hero-textos {
+    flex: 1; /* Ocupa 50% do espaço */
+}
+
+.hero-textos h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+}
+
+.hero-textos p {
+    font-size: 1.1rem;
+    color: var(--cor-texto-claro);
+    margin-bottom: 30px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-imagem {
+    flex: 1; /* Ocupa os outros 50% do espaço */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-imagem img {
+    max-width: 100%;
+    height: auto;
+    /* Adiciona uma animação suave de flutuação para dar vida à página */
+    animation: flutuar 3s ease-in-out infinite; 
+}
+
+@keyframes flutuar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* ==========================================================================
+   6. PÁGINA INICIAL: COMO FUNCIONA (CARDS)
+   ========================================================================== */
+.como-funciona {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.como-funciona h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--cor-primaria);
+}
+
+.cards-passos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--cor-branco);
+    border: var(--borda-padrao);
+    border-radius: 12px; /* Bordas arredondadas amigáveis */
+    padding: 30px;
+    flex: 1;
+    box-shadow: var(--sombra-leve);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--sombra-hover);
+    transform: translateY(-5px); /* Efeito de elevação */
+    border-color: var(--cor-primaria); /* Destaque verde na borda */
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+.card p {
+    color: var(--cor-texto-claro);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   7. RODAPÉ
+   ========================================================================== */
+.rodape-principal {
+    background-color: var(--cor-texto);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 60px;
+}
+
+.rodape-conteudo p {
+    margin-bottom: 5px;
+    color: #BDBDBD;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (Design Adaptável para Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse; /* Imagem fica em cima, texto embaixo */
+        text-align: center;
+    }
+    
+    .hero-botoes {
+        justify-content: center;
+    }
+    
+    .cards-passos {
+        flex-direction: column; /* Cards empilhados um embaixo do outro */
+    }
+    
+    .menu-links {
+        display: none; /* Em um cenário real, aqui entraria um menu Hamburguer */
+    }
+}
