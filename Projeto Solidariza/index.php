@@ -33,6 +33,39 @@
             </div>
         </div>
     </section>
+
+    <section id="campanhas" class="vitrine-campanhas">
+        <div class="cabecalho-secao">
+            <h3>Campanhas Ativas</h3>
+            <p>Escolha a causa e faça a diferença hoje mesmo.</p>
+        </div>
+        <div class="grid-campanhas">
+            <article class="card-campanha">
+                <span class="badge-status ativa">Ativa</span>
+                <h4>Campanha do agasalho</h4>
+                <p class="descricao-campanha">Arrecadação de roupas de inverno, cobertores e calçados em bom estado para famílias em situação de vulnerabilidades.</p>
+                <div class="rodape-card">
+                    <a href="cadastro.php" class="btn-bloco btn-sustentavel">Quero doar</a>
+                </div>
+            </article>
+            <article class="card-campanha">
+                <span class="badge-status ativa">Ativa</span>
+                <h4>Cesta básica solidária</h4>
+                <p class="descricao-campanha">Doe alimentos não perecíveis e itens de higiene para montagem de cestas destinadas a comunidade local.</p>
+                <div class="rodape-card">
+                    <a href="cadastro.php" class="btn-bloco btn-sustentavel">Quero doar</a>
+                </div>
+            </article>
+            <article class="card-campanha">
+                <span class="badge-status ativa">Ativa</span>
+                <h4>Móveis que transformam</h4>
+                <p class="descricao-campanha">Doe móveis usados e eletrodomésticos em bom estado.</p>
+                <div class="rodape-card">
+                    <a href="cadastro.php" class="btn-bloco btn-sustentavel">Quero doar</a>
+                </div>
+            </article>
+        </div>
+    </section>
 </main>
 
 <?php include_once 'includes/footer.php'?>

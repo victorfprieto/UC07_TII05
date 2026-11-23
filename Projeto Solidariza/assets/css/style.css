@@ -50,6 +50,12 @@ ul {
     list-style: none;
 }
 
+/* Adicione esta regra logo abaixo do Reset CSS (Seção 2) */
+html {
+    /* Faz a tela deslizar suavemente ao clicar em links de âncora (#campanhas) */
+    scroll-behavior: smooth;
+}
+
 /* ==========================================================================
    3. CABEÇALHO E NAVEGAÇÃO (NAVBAR) - CONSOLIDADO
    ========================================================================== */
@@ -349,4 +355,97 @@ ul {
     .menu-toggle.ativo .linha:nth-child(3) {
         transform: translateY(-9.5px) rotate(-45deg);
     }
+}
+
+/* ==========================================================================
+   10. VITRINE DE CAMPANHAS (CSS GRID)
+   ========================================================================== */
+.vitrine-campanhas {
+    padding: 60px 0;
+    /* Compensa a altura do menu fixo (sticky) para o título não ficar escondido ao rolar */
+    scroll-margin-top: 80px; 
+}
+
+.cabecalho-secao {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cabecalho-secao h3 {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.cabecalho-secao p {
+    color: var(--cor-texto-claro);
+    font-size: 1.05rem;
+}
+
+/* CSS Grid responsivo automático: cria quantas colunas couberem com no mínimo 300px */
+.grid-campanhas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-campanha {
+    background-color: var(--cor-branco);
+    border: var(--borda-padrao);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--sombra-leve);
+    
+    /* Flexbox em coluna para empurrar o botão sempre para o fundo do card */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-campanha:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--cor-primaria);
+}
+
+/* Badge (etiqueta) de Status da Campanha */
+.badge-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 12px;
+    border-radius: 20px; /* Formato de pílula */
+    margin-bottom: 15px;
+}
+
+.badge-status.ativa {
+    background-color: var(--cor-fundo-card); /* Verde Sálvia */
+    color: var(--cor-primaria);              /* Verde Folha */
+}
+
+.card-campanha h4 {
+    font-size: 1.3rem;
+    color: var(--cor-texto);
+    margin-bottom: 12px;
+}
+
+.descricao-campanha {
+    color: var(--cor-texto-claro);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    /* flex-grow: 1 faz o texto ocupar o espaço disponível, alinhando os botões de todos os cards */
+    flex-grow: 1; 
+}
+
+.rodape-card {
+    width: 100%;
+}
+
+/* Modificador para o botão ocupar 100% da largura do card */
+.btn-bloco {
+    display: block;
+    width: 100%;
+    text-align: center;
 }

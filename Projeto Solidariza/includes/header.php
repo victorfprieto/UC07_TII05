@@ -26,7 +26,7 @@
                 </button>
                 <div class="menu-links">
                     <a href="#">Início</a>
-                    <a href="#">Campanhas</a>
+                    <a href="#campanhas">Campanhas</a>
                     <a href="#">Entrar</a>
                     <a href="#">Cadastrar</a>
                 </div>
