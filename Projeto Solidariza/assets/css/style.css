@@ -217,15 +217,8 @@ ul {
 .hero-imagem img {
     max-width: 100%;
     height: auto;
-    animation: flutuar 4s ease-in-out infinite;
     border-radius: 24px;
     box-shadow: var(--sombra-hover);
-}
- 
-@keyframes flutuar {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
 }
  
 /* ==========================================================================
@@ -475,6 +468,141 @@ ul {
  
 .btn-bloco {
     display: block;
+    border: none;
     width: 100%;
     text-align: center;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   11. FORMULÁRIOS (LOGIN E CADASTRO)
+   ========================================================================== */
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    min-height: 75vh; /* Garante que o rodapé fique empurrado para baixo */
+}
+
+.card-form {
+    background-color: var(--cor-branco);
+    border: var(--borda-padrao);
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 650px; /* Largura ideal para o formulário de cadastro */
+    box-shadow: var(--sombra-leve);
+}
+
+/* Modificador para deixar a caixa de Login mais compacta */
+.card-form-pequeno {
+    max-width: 450px;
+}
+
+.cabecalho-form {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalho-form h2 {
+    color: var(--cor-primaria);
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.cabecalho-form p {
+    color: var(--cor-texto-claro);
+    font-size: 0.95rem;
+}
+
+/* Estilização do Fieldset e Legend */
+.grupo-secao {
+    border: none;
+    border-top: var(--borda-padrao);
+    padding-top: 20px;
+    margin-bottom: 25px;
+}
+
+.grupo-secao legend {
+    font-weight: 700;
+    color: var(--cor-primaria);
+    font-size: 1rem;
+    padding-right: 12px;
+}
+
+/* Container de cada par Label + Input */
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.grupo-input label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--cor-texto);
+}
+
+.grupo-input input {
+    padding: 12px 14px;
+    border: var(--borda-padrao);
+    border-radius: 6px;
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    color: var(--cor-texto);
+    background-color: var(--cor-branco);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Feedback visual de foco (IHC / Acessibilidade) */
+.grupo-input input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px var(--cor-fundo-card); /* Halo verde sálvia suave */
+}
+
+.texto-ajuda {
+    font-size: 0.8rem;
+    color: var(--cor-texto-claro);
+    margin-top: 5px;
+}
+
+/* Grid de 2 colunas para campos lado a lado (ex: Cidade e UF) */
+.linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.rodape-form {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: var(--borda-padrao);
+    font-size: 0.95rem;
+    color: var(--cor-texto-claro);
+}
+
+.rodape-form a {
+    color: var(--cor-primaria);
+    font-weight: 600;
+}
+
+.rodape-form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade dos formulários no celular */
+@media (max-width: 768px) {
+    .card-form {
+        padding: 25px 20px;
+    }
+
+    .linha-dupla {
+        grid-template-columns: 1fr; /* Empilha os campos em 1 coluna no mobile */
+        gap: 0;
+    }
 }

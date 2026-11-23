@@ -25,10 +25,10 @@
                     <span class="linha"></span>
                 </button>
                 <div class="menu-links">
-                    <a href="#">Início</a>
+                    <a href="index.php">Início</a>
                     <a href="#campanhas">Campanhas</a>
-                    <a href="#">Entrar</a>
-                    <a href="#">Cadastrar</a>
+                    <a href="login.php">Entrar</a>
+                    <a href="cadastrar.php">Cadastrar</a>
                 </div>
 
             </nav>
