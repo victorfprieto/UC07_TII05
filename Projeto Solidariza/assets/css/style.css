@@ -1,147 +1,170 @@
 /* ==========================================================================
    1. IMPORTAÇÃO DE FONTES E VARIÁVEIS GLOBAIS
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+ 
 :root {
-    /* Paleta Sustentável */
-    --cor-primaria: #2E7D32;       /* Verde Folha (Ação principal) */
-    --cor-primaria-hover: #1B5E20; /* Verde Escuro (Ao passar o mouse) */
-    --cor-fundo-card: #E8F5E9;     /* Verde Sálvia (Apoio) */
-    
-    /* Cores Neutras e Acessibilidade (IHC) */
-    --cor-texto: #212121;          /* Cinza Carvão para leitura confortável */
-    --cor-texto-claro: #757575;    /* Cinza médio para textos secundários */
-    --cor-fundo-site: #F8F9FA;     /* Branco Gelo */
-    --cor-branco: #FFFFFF;         /* Fundo de elementos em destaque */
-    
+    /* Paleta Principal */
+    --cor-primaria: #1B4332;
+    --cor-primaria-hover: #122E22;
+    --cor-destaque: #E07A5F;
+    --cor-destaque-hover: #C85A3F;
+    --cor-fundo-card: #D8F3DC;
+ 
+    /* Cores Neutras */
+    --cor-texto: #1F2937;
+    --cor-texto-claro: #4B5563;
+    --cor-fundo-site: #FAF9F6;
+    --cor-branco: #FFFFFF;
+ 
     /* Estilos Visuais */
-    --borda-padrao: 1px solid #E0E0E0;
-    --sombra-leve: 0 4px 6px rgba(0,0,0,0.05);
-    --sombra-hover: 0 8px 15px rgba(0,0,0,0.1);
-    
+    --borda-padrao: 1px solid rgba(27, 67, 50, 0.12);
+    --sombra-leve: 0 10px 25px -5px rgba(27, 67, 50, 0.06), 0 4px 10px -2px rgba(27, 67, 50, 0.04);
+    --sombra-hover: 0 20px 35px -10px rgba(27, 67, 50, 0.14);
+ 
     /* Tipografia */
-    --fonte-principal: 'Inter', sans-serif;
+    --fonte-principal: 'DM Sans', sans-serif;
+    --fonte-titulo: 'Plus Jakarta Sans', sans-serif;
 }
-
+ 
 /* ==========================================================================
    2. RESET CSS (Padronização entre navegadores)
    ========================================================================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Garante que padding não aumente o tamanho da caixa */
+    box-sizing: border-box;
 }
-
+ 
+html {
+    scroll-behavior: smooth;
+}
+ 
 body {
     font-family: var(--fonte-principal);
     background-color: var(--cor-fundo-site);
     color: var(--cor-texto);
-    line-height: 1.6;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
 }
-
+ 
+h1, h2, h3, h4 {
+    font-family: var(--fonte-titulo);
+    letter-spacing: -0.02em;
+}
+ 
 a {
     text-decoration: none;
     color: var(--cor-texto);
-    transition: color 0.3s ease;
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-
+ 
 ul {
     list-style: none;
 }
-
-/* Adicione esta regra logo abaixo do Reset CSS (Seção 2) */
-html {
-    /* Faz a tela deslizar suavemente ao clicar em links de âncora (#campanhas) */
-    scroll-behavior: smooth;
-}
-
+ 
 /* ==========================================================================
    3. CABEÇALHO E NAVEGAÇÃO (NAVBAR) - CONSOLIDADO
    ========================================================================== */
 .cabecalho-principal {
-    background-color: var(--cor-branco);
+    background-color: rgba(250, 249, 246, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: var(--borda-padrao);
-    box-shadow: var(--sombra-leve);
-    position: sticky; 
+    box-shadow: 0 4px 20px rgba(27, 67, 50, 0.04);
+    position: sticky;
     top: 0;
     z-index: 100;
 }
-
+ 
 .navbar {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;            
-    max-width: 1200px;              
-    margin: 0 auto;                 
-    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 24px;
 }
-
+ 
 /* --- LOGO --- */
 .logo a {
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
+ 
 .logo img {
-    height: 50px;
+    height: 46px;
     width: auto;
     display: block;
+    border-radius: 10px;
 }
-
+ 
 .logo h1 {
     font-size: 1.5rem;
     color: var(--cor-primaria);
-    font-weight: 700;
+    font-weight: 800;
 }
-
+ 
 /* --- MENU LINKS (DESKTOP) --- */
 .menu-links {
-    display: flex;       /* Garante que o menu apareça no Desktop */
+    display: flex;
     align-items: center;
     gap: 30px;
+    font-weight: 500;
 }
-
+ 
 .menu-links a:hover {
-    color: var(--cor-primaria);
+    color: var(--cor-destaque);
 }
-
+ 
 /* ==========================================================================
    4. BOTÕES (Componentes Reutilizáveis)
    ========================================================================== */
 .btn-sustentavel {
-    background-color: var(--cor-primaria);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-destaque);
     color: var(--cor-branco) !important;
-    padding: 10px 20px;
-    border-radius: 16px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 11px 22px;
+    border-radius: 12px;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(224, 122, 95, 0.32);
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
-
+ 
 .btn-sustentavel:hover {
-    background-color: var(--cor-primaria-hover);
-    transform: translateY(-2px); /* Efeito sutil de levantar ao passar o mouse */
+    background-color: var(--cor-destaque-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(224, 122, 95, 0.42);
 }
-
+ 
 .btn-secundario {
-    background-color: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-branco);
     color: var(--cor-primaria);
-    padding: 10px 20px;
-    border: 2px solid var(--cor-primaria);
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    padding: 11px 22px;
+    border: 1.5px solid rgba(27, 67, 50, 0.22);
+    border-radius: 12px;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    transition: all 0.25s ease;
 }
-
+ 
 .btn-secundario:hover {
-    background-color: var(--cor-primaria);
-    color: var(--cor-branco);
+    background-color: var(--cor-fundo-card);
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
 }
-
+ 
 .btn-grande {
     padding: 15px 30px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 /* ==========================================================================
@@ -150,151 +173,142 @@ html {
 .conteudo-principal {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 24px;
 }
-
+ 
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 56px;
     margin-bottom: 80px;
-    padding: 40px 0;
+    padding: 36px 0;
 }
-
+ 
 .hero-textos {
-    flex: 1; /* Ocupa 50% do espaço */
+    flex: 1.1;
 }
-
+ 
 .hero-textos h2 {
-    font-size: 2.8rem;
-    line-height: 1.2;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
     margin-bottom: 20px;
-    color: var(--cor-texto);
+    color: var(--cor-primaria);
 }
-
+ 
 .hero-textos p {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     color: var(--cor-texto-claro);
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+    max-width: 540px;
 }
-
+ 
 .hero-botoes {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 16px;
 }
-
+ 
 .hero-imagem {
-    flex: 1; /* Ocupa os outros 50% do espaço */
+    flex: 0.9;
     display: flex;
     justify-content: center;
 }
-
+ 
 .hero-imagem img {
     max-width: 100%;
     height: auto;
-    /* Adiciona uma animação suave de flutuação para dar vida à página */
-    animation: flutuar 3s ease-in-out infinite; 
-    border-radius: 16px;
+    padding: 10px;
+    background: linear-gradient(135deg, var(--cor-fundo-card), #FBEAE5);
+    animation: flutuar 4s ease-in-out infinite;
+    border-radius: 24px;
+    box-shadow: var(--sombra-hover);
 }
-
+ 
 @keyframes flutuar {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
-
+ 
 /* ==========================================================================
    6. PÁGINA INICIAL: COMO FUNCIONA (CARDS)
    ========================================================================== */
 .como-funciona {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 72px;
+    padding-top: 20px;
 }
-
+ 
 .como-funciona h3 {
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-size: 2.15rem;
+    font-weight: 800;
+    margin-bottom: 44px;
     color: var(--cor-primaria);
 }
-
+ 
 .cards-passos {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 28px;
 }
-
+ 
 .card {
     background-color: var(--cor-branco);
     border: var(--borda-padrao);
-    border-radius: 16px; /* Bordas arredondadas amigáveis */
-    padding: 30px;
+    border-radius: 20px;
+    padding: 34px 28px;
     flex: 1;
+    text-align: left;
     box-shadow: var(--sombra-leve);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
-
+ 
 .card:hover {
     box-shadow: var(--sombra-hover);
-    transform: translateY(-5px); /* Efeito de elevação */
-    border-color: var(--cor-primaria); /* Destaque verde na borda */
+    transform: translateY(-6px);
+    border-color: var(--cor-destaque);
 }
-
+ 
 .card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
     color: var(--cor-primaria);
 }
-
+ 
 .card p {
     color: var(--cor-texto-claro);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
 }
 
 /* ==========================================================================
    7. RODAPÉ
    ========================================================================== */
 .rodape-principal {
-    background-color: var(--cor-texto);
+    background-color: var(--cor-primaria);
     color: var(--cor-branco);
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
+    padding: 36px 24px;
+    margin-top: 72px;
 }
-
+ 
 .rodape-conteudo p {
-    margin-bottom: 5px;
-    color: #BDBDBD;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
 }
-
-/* ==========================================================================
-   8. RESPONSIVIDADE (Design Adaptável para Celulares)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .hero-section {
-        flex-direction: column-reverse; /* Imagem fica em cima, texto embaixo */
-        text-align: center;
-    }
-    
-    .hero-botoes {
-        justify-content: center;
-    }
-    
-    .cards-passos {
-        flex-direction: column; /* Cards empilhados um embaixo do outro */
-    }
-    
-    .menu-links {
-        display: none; /* Em um cenário real, aqui entraria um menu Hamburguer */
-    }
+ 
+.rodape-conteudo small {
+    color: var(--cor-fundo-card);
 }
-
+ 
 /* ==========================================================================
-   9. MENU HAMBÚRGUER E RESPONSIVIDADE (MOBILE)
+   8. MENU HAMBÚRGUER E RESPONSIVIDADE (MOBILE)
    ========================================================================== */
-/* Botão do menu fica oculto no Desktop */
 .menu-toggle {
-    display: none; 
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -304,7 +318,7 @@ html {
     cursor: pointer;
     z-index: 1000;
 }
-
+ 
 .menu-toggle .linha {
     width: 100%;
     height: 3px;
@@ -312,138 +326,157 @@ html {
     border-radius: 3px;
     transition: all 0.3s ease;
 }
-
-/* Regras aplicadas APENAS em telas menores que 768px (Celulares) */
+ 
 @media (max-width: 768px) {
-    
-    .menu-toggle {
-        display: flex; /* Mostra o botão hambúrguer */
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 36px;
+        margin-bottom: 56px;
+        padding-top: 16px;
     }
-
-    /* Sobrescreve o .menu-links do desktop para esconder na tela de celular */
+ 
+    .hero-textos h2 {
+        font-size: 2.2rem;
+    }
+ 
+    .hero-textos p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+ 
+    .hero-botoes {
+        justify-content: center;
+    }
+ 
+    .cards-passos {
+        flex-direction: column;
+    }
+ 
+    .menu-toggle {
+        display: flex;
+    }
+ 
     .menu-links {
-        position: absolute;
-        top: 80px; /* Altura do cabeçalho */
+        position: fixed;
+        top: 76px;
         left: 0;
         width: 100%;
         background-color: var(--cor-branco);
         flex-direction: column;
-        padding: 30px 0;
+        padding: 32px 24px;
+        gap: 22px;
         box-shadow: var(--sombra-hover);
-        
-        /* Esconde o menu */
-        transform: translateY(-150%);
+        border-bottom: var(--borda-padrao);
+        transform: translateY(-140%);
         opacity: 0;
-        pointer-events: none; /* Impede que o menu invisível bloqueie cliques */
-        transition: all 0.3s ease;
+        pointer-events: none;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
     }
-
-    /* Classe ativada pelo JavaScript para mostrar o menu */
+ 
     .menu-links.ativo {
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
     }
-    
-    /* Animação do botão virando um "X" */
+ 
     .menu-toggle.ativo .linha:nth-child(1) {
         transform: translateY(9.5px) rotate(45deg);
     }
+ 
     .menu-toggle.ativo .linha:nth-child(2) {
         opacity: 0;
     }
+ 
     .menu-toggle.ativo .linha:nth-child(3) {
         transform: translateY(-9.5px) rotate(-45deg);
     }
 }
-
+ 
 /* ==========================================================================
-   10. VITRINE DE CAMPANHAS (CSS GRID)
+   9. VITRINE DE CAMPANHAS (CSS GRID)
    ========================================================================== */
 .vitrine-campanhas {
     padding: 60px 0;
-    /* Compensa a altura do menu fixo (sticky) para o título não ficar escondido ao rolar */
-    scroll-margin-top: 80px; 
+    scroll-margin-top: 80px;
 }
-
+ 
 .cabecalho-secao {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 44px;
 }
-
+ 
 .cabecalho-secao h3 {
-    font-size: 2rem;
+    font-size: 2.15rem;
+    font-weight: 800;
     color: var(--cor-primaria);
     margin-bottom: 10px;
 }
-
+ 
 .cabecalho-secao p {
     color: var(--cor-texto-claro);
     font-size: 1.05rem;
 }
-
-/* CSS Grid responsivo automático: cria quantas colunas couberem com no mínimo 300px */
+ 
 .grid-campanhas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 28px;
 }
-
+ 
 .card-campanha {
     background-color: var(--cor-branco);
     border: var(--borda-padrao);
-    border-radius: 12px;
-    padding: 25px;
+    border-radius: 20px;
+    padding: 28px;
     box-shadow: var(--sombra-leve);
-    
-    /* Flexbox em coluna para empurrar o botão sempre para o fundo do card */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
+ 
 .card-campanha:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     box-shadow: var(--sombra-hover);
-    border-color: var(--cor-primaria);
+    border-color: var(--cor-destaque);
 }
-
-/* Badge (etiqueta) de Status da Campanha */
+ 
 .badge-status {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 4px 12px;
-    border-radius: 20px; /* Formato de pílula */
-    margin-bottom: 15px;
+    letter-spacing: 0.6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
 }
-
+ 
 .badge-status.ativa {
-    background-color: var(--cor-fundo-card); /* Verde Sálvia */
-    color: var(--cor-primaria);              /* Verde Folha */
+    background-color: var(--cor-fundo-card);
+    color: var(--cor-primaria);
 }
-
+ 
 .card-campanha h4 {
-    font-size: 1.3rem;
-    color: var(--cor-texto);
+    font-size: 1.32rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
     margin-bottom: 12px;
 }
-
+ 
 .descricao-campanha {
     color: var(--cor-texto-claro);
-    font-size: 0.95rem;
-    margin-bottom: 25px;
-    /* flex-grow: 1 faz o texto ocupar o espaço disponível, alinhando os botões de todos os cards */
-    flex-grow: 1; 
+    font-size: 0.96rem;
+    margin-bottom: 24px;
+    flex-grow: 1;
 }
-
+ 
 .rodape-card {
     width: 100%;
+    padding-top: 16px;
+    border-top: 1px solid rgba(27, 67, 50, 0.08);
 }
-
-/* Modificador para o botão ocupar 100% da largura do card */
+ 
 .btn-bloco {
     display: block;
     width: 100%;
