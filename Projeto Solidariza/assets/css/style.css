@@ -596,3 +596,28 @@ ul {
         gap: 0;
     }
 }
+
+/* ==========================================================================
+   12. ESTADOS DE VALIDAÇÃO DE FORMULÁRIOS (AULA 07)
+   ========================================================================== */
+/* Borda vermelha suave para indicar erro de preenchimento */
+.grupo-input input.input-erro {
+    border-color: #D32F2F;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+/* Borda verde para confirmar que o campo está válido */
+.grupo-input input.input-sucesso {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px var(--cor-fundo-card);
+}
+
+/* Texto de alerta abaixo dos inputs */
+.mensagem-erro,
+.texto-erro {
+    color: #D32F2F;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 5px;
+    min-height: 18px; /* Evita que o layout fique "pulando" quando a mensagem aparece */
+}

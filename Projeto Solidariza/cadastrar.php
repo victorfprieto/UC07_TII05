@@ -54,28 +54,74 @@
                                 minlength="6"
                                 required
                             >
+                            <small id="erro-senha" class="mensagem-erro">As senhas não são iguais</small>
                         </div>
                     </div>
                 </fieldset>
                 <fieldset class="grupo-secao">
-                    <legend>Endereço para logística de coleta</legend>
+
+                    <legend>Endereço para lojista de coleta</legend>
                     <div class="linha-dupla">
                         <div class="grupo-input">
                             <label for="cep">CEP</label>
-                            <input 
+                            <input
                                 type="text"
                                 id="cep"
                                 name="cep"
-                                placeholder="Ex. 12345-678"
+                                placeholder="Ex: 12345-678"
                                 maxlength="9"
                                 required
                             >
-                            <small id="cep-status" class="texto-ajuda">Digite o CEP para preenchimento automático</small>
+                            <small id="cep-status" class="texto-ajuda"> Digite o CEP para preencimento automatico</small>
                         </div>
-                        <div class="grupo-input"></div>
+                        <div class="grupo-input">
+                            <label for="bairro">Bairro</label>
+                            <input
+                                type="text"
+                                id="bairro"
+                                name="bairro"
+                                placeholder="Preenchimento automático"
+                                required
+                            >
+                        </div>
                     </div>
-                    <div class="grupo-input"></div>
+
+                    <div class="grupo-input">
+                        <label for="logradouro">Logradouro</label>
+                        <input
+                            type="text"
+                            id="logradouro"
+                            name="logradouro"
+                            placeholder="Ex: Rua Exemplo, 123"
+                            maxlength="200"
+                            required
+                            >
+                    </div>
+                
                     <div class="linha-dupla"></div>
+                    <div class="grupo-input">
+                        <label for="localidade">Cidade</label>
+                        <input
+                            type="text"
+                            id="localidade"
+                            name="localidade"
+                            placeholder="Preenchido automaticamente"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+                
+                    <div class="grupo-input">
+                        <label for="uf">Estado</label>
+                        <input
+                            type="text"
+                            id="uf"
+                            name="uf"
+                            placeholder="Preenchido automaticamente"
+                            maxlength="2"
+                            required
+                        >
+                    </div>
                 </fieldset>
                 <button type="submit" class="btn-bloco btn-sustentavel">Entrar</button>
             </form>
