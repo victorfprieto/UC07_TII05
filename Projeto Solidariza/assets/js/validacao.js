@@ -11,7 +11,7 @@ if (formCadastro) {
 
 // Testando inputCep
 inputCep.addEventListener('input', () => {
-    let valorCep = event.target.value.replace(/\D/g, '');
+    let valor = event.target.value.replace(/\D/g, '');
 
     valor = valor.substring (0, 8);
 
