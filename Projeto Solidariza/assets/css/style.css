@@ -515,7 +515,7 @@ ul {
     border: none;
     border-top: var(--borda-padrao);
     padding-top: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .grupo-secao legend {
