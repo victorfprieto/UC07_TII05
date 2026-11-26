@@ -550,10 +550,11 @@ ul {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Removido o outline/borda azul ao focar ou validar com sucesso */
 .grupo-input input:focus {
     outline: none;
-    border-color: var(--cor-primaria);
-    box-shadow: 0 0 0 3px rgba(98, 182, 203, 0.25);
+    border-color: var(--borda-padrao);
+    box-shadow: none;
 }
 
 .texto-ajuda {
@@ -598,18 +599,20 @@ ul {
 }
 
 /* ==========================================================================
-   12. ESTADOS DE VALIDAÇÃO DE FORMULÁRIOS (AULA 07)
+12. ESTADOS DE VALIDAÇÃO DE FORMULÁRIOS (AULA 07)
    ========================================================================== */
 /* Borda vermelha suave para indicar erro de preenchimento */
 .grupo-input input.input-erro {
-    border-color: #D32F2F;
-    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+    border-color: #D32F2F !important;
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15) !important;
+    outline: none;
 }
 
-/* Borda verde para confirmar que o campo está válido */
+/* Removido o destaque azul da classe de sucesso para manter o input neutro */
 .grupo-input input.input-sucesso {
-    border-color: var(--cor-primaria);
-    box-shadow: 0 0 0 3px var(--cor-fundo-card);
+    border-color: rgba(27, 73, 101, 0.12);
+    box-shadow: none;
+    outline: none;
 }
 
 /* Texto de alerta abaixo dos inputs */
@@ -619,5 +622,5 @@ ul {
     font-size: 0.85rem;
     font-weight: 600;
     margin-top: 5px;
-    min-height: 18px; /* Evita que o layout fique "pulando" quando a mensagem aparece */
+    min-height: 18px;
 }
