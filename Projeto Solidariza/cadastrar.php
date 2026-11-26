@@ -33,30 +33,31 @@
                         >
                     </div>
                     <div class="linha-dupla">
-                        <div class="grupo-input">
-                            <label for="senha">Senha</label>
-                            <input 
-                                type="password"
-                                id="senha"
-                                name="senha"
-                                placeholder="Mínimo de 6 caracteres"
-                                minlength="6"
-                                required
-                            >
-                        </div>
-                        <div class="grupo-input">
-                            <label for="senha">Confirme sua senha</label>
-                            <input 
-                                type="password"
-                                id="senha"
-                                name="senha"
-                                placeholder="Mínimo de 6 caracteres"
-                                minlength="6"
-                                required
-                            >
-                            <small id="erro-senha" class="mensagem-erro">As senhas não são iguais</small>
-                        </div>
+                    <div class="grupo-input">
+                        <label for="senha">Senha</label>
+                        <input 
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Mínimo de 6 caracteres"
+                            minlength="6"
+                            required
+                        >
                     </div>
+                    <div class="grupo-input">
+                        <!-- ID alterado para confirma-senha -->
+                        <label for="confirma-senha">Confirme sua senha</label>
+                        <input 
+                            type="password"
+                            id="confirma-senha"
+                            name="confirma-senha"
+                            placeholder="Mínimo de 6 caracteres"
+                            minlength="6"
+                            required
+                        >
+                        <small id="erro-senha" class="mensagem-erro"></small>
+                    </div>
+                </div>
                 </fieldset>
                 <fieldset class="grupo-secao">
 
